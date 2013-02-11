@@ -98,7 +98,7 @@ public enum AllEventsInitiator {
 	 */
 	private void scheduleEventManager(){
 		
-		m_EventMgr = new AllEventsManager(fileProcessingQ, 1);
+		m_EventMgr = new AllEventsManager(fileProcessingQ, 10);
 		ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
 		m_EventMgrFuture = executor.scheduleAtFixedRate(m_EventMgr, 0, 1, TimeUnit.HOURS);
 		System.out.println("Started the AllEventsManager Executor...");
